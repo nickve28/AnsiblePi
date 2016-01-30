@@ -1,9 +1,0 @@
----
-- hosts: raspiserver
-  remote_user: nick 
-  sudo:        true
-  sudo_user:   root 
-  tasks:
-          - name: apt-get update
-            apt: update_cache=true
-          - include: tasks/git.yml

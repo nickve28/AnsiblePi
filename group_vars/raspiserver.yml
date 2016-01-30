@@ -1,0 +1,6 @@
+---
+user: nick
+nodejs_file: node-v4.2.6-linux-armv7l.tar.xz
+nodejs_version: v4.2.6
+nodejs_location: https://nodejs.org/dist/{{ nodejs_version }}/{{ nodejs_file }}
+nodejs_extracted_folder: node-v4.2.6-linux-armv7l

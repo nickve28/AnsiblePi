@@ -1,0 +1,17 @@
+---
+- name: common configuration across all nodes
+  hosts: all
+  remote_user: nick 
+  sudo:        true
+  sudo_user:   root 
+  roles:
+          - common
+
+- name: Webserver role for the pi
+  hosts: raspiserver
+  remote_user: nick 
+  sudo:        true
+  sudo_user:   root 
+
+  roles:
+          - nodejs

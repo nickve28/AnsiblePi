@@ -1,0 +1,12 @@
+---
+- name: Nodejs download
+  get_url: url={{ nodejs_location }} dest=/home/{{ user }}/
+  register: new_archive
+- name: Unarchive nodejs download
+  unarchive: 
+          src=/home/{{ user }}/{{ nodejs_file }}
+          dest=/home/{{ user }}/
+          copy=no
+  when: new_archive|changed
+- name: install into /usr/local/
+  command: cd /home/{{ user }}/{{ nodejs_extracted_folder }} && sudo cp -R * /usr/local/
