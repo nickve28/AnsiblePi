@@ -1,17 +1,25 @@
 ---
 - name: common configuration across all nodes
   hosts: all
-  remote_user: nick 
+  remote_user: nick
   sudo:        true
-  sudo_user:   root 
+  sudo_user:   root
   roles:
           - common
 
+- name:         wireless configuration
+  hosts:        raspberrypi3
+  remote_user:  nick
+  sudo:         true
+  sudo_user:    root
+  roles:
+          - wireless
+
+
 - name: Webserver role for the pi
   hosts: raspiserver
-  remote_user: nick 
+  remote_user: nick
   sudo:        true
-  sudo_user:   root 
+  sudo_user:   root
 
   roles:
-          - nodejs

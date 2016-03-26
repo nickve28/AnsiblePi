@@ -9,4 +9,4 @@
           copy=no
   when: new_archive|changed
 - name: install into /usr/local/
-  command: cd /home/{{ user }}/{{ nodejs_extracted_folder }} && sudo cp -R * /usr/local/
+  command: chdir=/home/{{ user }}/{{ nodejs_extracted_folder }} sudo cp -R * /usr/local/
